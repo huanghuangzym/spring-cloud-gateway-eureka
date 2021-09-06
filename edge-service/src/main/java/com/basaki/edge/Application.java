@@ -1,15 +1,17 @@
 package com.basaki.edge;
 
-import com.basaki.edge.security.SecurityAuthProperties;
+import com.basaki.edge.gateway.GatewayApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-@SpringBootApplication(scanBasePackages = {"com.basaki.edge"})
-@EnableConfigurationProperties({SecurityAuthProperties.class})
+
+@SpringBootApplication
+@EnableEurekaClient
 public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(GatewayApplication.class, args);
     }
 }
